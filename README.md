@@ -7,6 +7,7 @@ A simple Flask hello-world webapp.
 ```bash
 python -m venv venv
 source venv/bin/activate
+pip install -r requirements.txt
 pip install -e ".[dev]"
 ```
 
@@ -33,5 +34,13 @@ pytest -v
 ## Install production dependencies only
 
 ```bash
-pip install -e .
+pip install -r requirements.txt
+```
+
+## Update requirements.txt
+
+After changing dependencies in `pyproject.toml`, regenerate the lock file:
+
+```bash
+pipx run --spec pip-tools pip-compile --generate-hashes --output-file=requirements.txt pyproject.toml
 ```
