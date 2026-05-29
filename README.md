@@ -36,7 +36,7 @@ pytest -v
 Build and run with podman:
 
 ```bash
-podman build -t awesome-fermi .
+podman build --secret id=netrc,src=$HOME/.netrc -t awesome-fermi .
 podman run -p 8080:8080 awesome-fermi
 ```
 
@@ -51,9 +51,11 @@ dependencies and `hi/python:3.12` (distroless) for the runtime.
 After changing dependencies in `pyproject.toml`, regenerate the lock files:
 
 ```bash
-pipx run --spec pip-tools pip-compile --generate-hashes --output-file=requirements.txt pyproject.toml
-pipx run pybuild-deps compile --generate-hashes -o requirements-build.txt requirements.txt
+PIP_CONFIG_FILE=/dev/null pipx run --python python3.12 --spec pip-tools pip-compile --no-reuse-hashes --index-url https://packages.redhat.com/trusted-libraries/python/ --generate-hashes --output-file=requirements.txt pyproject.toml
+PIP_CONFIG_FILE=/dev/null pipx run --python python3.12 pybuild-deps compile --generate-hashes -o requirements-build.txt requirements.txt
 ```
 
 `requirements.txt` pins all runtime dependencies. `requirements-build.txt` pins
 the build dependencies needed to compile them from source during hermetic builds.
+
+Authentication to the package index is handled via `~/.netrc`.

@@ -7,7 +7,7 @@ ENV PATH="/opt/venv/bin:$PATH"
 WORKDIR /build
 
 COPY requirements.txt .
-RUN pip3 install --no-cache-dir -r requirements.txt
+RUN --mount=type=secret,id=netrc,target=$HOME/.netrc pip3 install --no-cache-dir -r requirements.txt
 
 COPY pyproject.toml .
 COPY src/ src/

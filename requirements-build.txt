@@ -4,9 +4,12 @@
 #
 #    pybuild-deps compile --generate-hashes --output-file=requirements-build.txt requirements.txt
 #
+--index-url https://packages.redhat.com/trusted-libraries/python/
+
 flit-core==3.12.0 \
-    --hash=sha256:18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2 \
-    --hash=sha256:e7a0304069ea895172e3c7bb703292e992c5d1555dd1233ab7b5621b5b69e62c
+    --hash=sha256:2999682ee17d650bf94f488ca03e7a21cc7933ee911f87afcb7c62228f3b1af0 \
+    --hash=sha256:5ddd11a56405b874271a56527a849320c5f275d06ea6ceb0b37c4edc7bb2d837 \
+    --hash=sha256:d5331e3d7abe594ade326eede6d8f4e50823045dc2fd6f6898e5bb113d752ef7
     # via
     #   blinker
     #   click
@@ -17,6 +20,6 @@ flit-core==3.12.0 \
 
 # The following packages are considered to be unsafe in a requirements file:
 setuptools==82.0.1 \
-    --hash=sha256:7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9 \
-    --hash=sha256:a59e362652f08dcd477c78bb6e7bd9d80a7995bc73ce773050228a348ce2e5bb
+    --hash=sha256:0243f78dc0adc0f4a31597f88fd1dff3fe498dad514a3be7a04871f69081f8ac \
+    --hash=sha256:7c96c7e5b469aa94c4dd860413c6cd184b8f8e83fb89a708693af3041b40f2d2
     # via markupsafe
