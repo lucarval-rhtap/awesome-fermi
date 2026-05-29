@@ -46,10 +46,14 @@ The image uses [Red Hat Hardened Images](https://developers.redhat.com/articles/
 as the base with a multi-stage build: `hi/python:3.12-builder` for installing
 dependencies and `hi/python:3.12` (distroless) for the runtime.
 
-## Update requirements.txt
+## Update dependencies
 
-After changing dependencies in `pyproject.toml`, regenerate the lock file:
+After changing dependencies in `pyproject.toml`, regenerate the lock files:
 
 ```bash
 pipx run --spec pip-tools pip-compile --generate-hashes --output-file=requirements.txt pyproject.toml
+pipx run pybuild-deps compile --generate-hashes -o requirements-build.txt requirements.txt
 ```
+
+`requirements.txt` pins all runtime dependencies. `requirements-build.txt` pins
+the build dependencies needed to compile them from source during hermetic builds.

@@ -25,6 +25,10 @@ spec:
     value: quay.io/redhat-user-workloads/rhtap-shared-team-tenant/awesome-fermi-c9ff1:{{revision}}
   - name: dockerfile
     value: /Containerfile
+  - name: hermetic
+    value: "true"
+  - name: prefetch-input
+    value: '{"type": "pip", "path": "."}'
   pipelineSpec:
     description: |
       This pipeline is ideal for building container images from a Containerfile while maintaining trust after pipeline customization.
