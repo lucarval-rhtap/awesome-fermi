@@ -1,0 +1,8 @@
+pyproject.toml
+src/awesome_fermi/__init__.py
+src/awesome_fermi.egg-info/PKG-INFO
+src/awesome_fermi.egg-info/SOURCES.txt
+src/awesome_fermi.egg-info/dependency_links.txt
+src/awesome_fermi.egg-info/requires.txt
+src/awesome_fermi.egg-info/top_level.txt
+tests/test_app.py

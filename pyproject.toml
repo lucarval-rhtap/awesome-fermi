@@ -1,0 +1,13 @@
+[project]
+name = "awesome-fermi"
+version = "0.1.0"
+description = "A simple Flask hello-world webapp"
+requires-python = ">=3.9"
+dependencies = [
+    "flask",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+]
