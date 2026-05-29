@@ -31,11 +31,20 @@ With verbose output:
 pytest -v
 ```
 
-## Install production dependencies only
+## Container image
+
+Build and run with podman:
 
 ```bash
-pip install -r requirements.txt
+podman build -t awesome-fermi .
+podman run -p 8080:8080 awesome-fermi
 ```
+
+The app will be available at http://127.0.0.1:8080.
+
+The image uses [Red Hat Hardened Images](https://developers.redhat.com/articles/2026/05/12/red-hat-hardened-images-top-5-benefits-software-developers)
+as the base with a multi-stage build: `hi/python:3.12-builder` for installing
+dependencies and `hi/python:3.12` (distroless) for the runtime.
 
 ## Update requirements.txt
 
