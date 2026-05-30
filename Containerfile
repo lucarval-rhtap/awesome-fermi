@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/hi/python:3.12-builder@sha256:418ed06209e2700a15275756567c98bfd9885abb80e6d64de767aa4f57cf0c6e AS builder
+FROM registry.access.redhat.com/hi/python:3.14-builder@sha256:03cf946c7166c5652fe7b41a2531379a5f5dd9db313b5dd2b89e2b96cc033e3f AS builder
 
 USER 0
 RUN python3 -m venv /opt/venv
@@ -13,7 +13,7 @@ COPY pyproject.toml .
 COPY src/ src/
 RUN pip3 install --no-cache-dir --no-deps .
 
-FROM registry.access.redhat.com/hi/python:3.12@sha256:aab4f05539f774dd5d2cd487f553f982bb44fcfed1a627ef636cbd3ebd549a57
+FROM registry.access.redhat.com/hi/python:3.14@sha256:926e2552bd26c01fcd910d39278efd6756ee6a5d237819814f6da50fffd8115e
 
 COPY --from=builder /opt/venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH" \
