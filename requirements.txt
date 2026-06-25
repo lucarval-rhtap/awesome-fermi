@@ -10,9 +10,9 @@ blinker==1.9.0 \
     --hash=sha256:b3548bf1999549a4bc5581f942c4c8df1b3fe96c5e1df5d60997198b4758dbe6 \
     --hash=sha256:d84df6e9d9704dbfcfc86e9a749bb1c37d724752fd8d42cab417a5af6b8621b3
     # via flask
-click==8.4.1 \
-    --hash=sha256:1f0205e0d78da191644f7e6cfc54ef5342f2e85c8dad139f9fa0804dcb5b3afe \
-    --hash=sha256:6e835b030f36ad6dc15276237ef58fd00c19210751f209dbf7e48adbfa0b930f
+click==8.4.2 \
+    --hash=sha256:9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6 \
+    --hash=sha256:e6f9f66136c816745b9d65817da91d61d957fb16e02e4dcd0552553c5a197b76
     # via flask
 flask==3.1.3 \
     --hash=sha256:0d96eb94422270c5c0d27404283b9b4bfcda0baf6396719b0a2c5b9b9ebf6acf \
