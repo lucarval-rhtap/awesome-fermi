@@ -13,7 +13,7 @@ COPY pyproject.toml .
 COPY src/ src/
 RUN pip3 install --no-cache-dir --no-deps .
 
-FROM registry.access.redhat.com/hi/python:3.12@sha256:aab4f05539f774dd5d2cd487f553f982bb44fcfed1a627ef636cbd3ebd549a57
+FROM registry.access.redhat.com/hi/python:3.12@sha256:f26250d20dd1bc70539b049d7b9b1a93998d6fd57ba75e6579e47b93bef76fc9
 
 COPY --from=builder /opt/venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH" \
