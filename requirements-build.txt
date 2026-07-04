@@ -19,7 +19,7 @@ flit-core==3.12.0 \
     #   werkzeug
 
 # The following packages are considered to be unsafe in a requirements file:
-setuptools==82.0.1 \
-    --hash=sha256:0243f78dc0adc0f4a31597f88fd1dff3fe498dad514a3be7a04871f69081f8ac \
-    --hash=sha256:7c96c7e5b469aa94c4dd860413c6cd184b8f8e83fb89a708693af3041b40f2d2
+setuptools==83.0.0 \
+    --hash=sha256:025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef \
+    --hash=sha256:29b23c360f22f414dc7336bb39178cc7bcbf6021ed2733cde173f09dba19abb3
     # via markupsafe
