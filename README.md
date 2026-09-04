@@ -51,11 +51,19 @@ dependencies and `hi/python:3.12` (distroless) for the runtime.
 After changing dependencies in `pyproject.toml`, regenerate the lock files:
 
 ```bash
-PIP_CONFIG_FILE=/dev/null pipx run --python python3.12 --spec pip-tools pip-compile --no-reuse-hashes --index-url https://packages.redhat.com/trusted-libraries/python/ --generate-hashes --output-file=requirements.txt pyproject.toml
-PIP_CONFIG_FILE=/dev/null pipx run --python python3.12 pybuild-deps compile --generate-hashes -o requirements-build.txt requirements.txt
+PIP_CONFIG_FILE=/dev/null pipx run --python python3.12 --spec pip-tools \
+    pip-compile --no-reuse-hashes \
+    --index-url https://packages.redhat.com/lightwell/python/validated/simple \
+    --generate-hashes --output-file=requirements.txt pyproject.toml
+
+PIP_CONFIG_FILE=/dev/null pipx run --python python3.12 --spec pip-tools \
+    pip-compile --no-reuse-hashes \
+    --index-url https://packages.redhat.com/lightwell/python/validated/simple \
+    --generate-hashes --only-build-deps --all-build-deps --allow-unsafe \
+    --output-file=requirements-build.txt pyproject.toml
 ```
 
 `requirements.txt` pins all runtime dependencies. `requirements-build.txt` pins
-the build dependencies needed to compile them from source during hermetic builds.
+the build dependencies needed to install the application.
 
 Authentication to the package index is handled via `~/.netrc`.
