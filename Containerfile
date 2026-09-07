@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/hi/python:3.12-builder@sha256:418ed06209e2700a15275756567c98bfd9885abb80e6d64de767aa4f57cf0c6e AS builder
+FROM registry.access.redhat.com/hi/python:3.12-builder@sha256:786098010766a2f4097a1b480b734f12bf3b45234cf6e65b3b7db432637c4f15 AS builder
 
 USER 0
 RUN python3 -m venv /opt/venv
