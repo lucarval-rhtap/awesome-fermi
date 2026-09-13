@@ -13,7 +13,7 @@ COPY pyproject.toml .
 COPY src/ src/
 RUN --mount=type=secret,id=netrc,target=$HOME/.netrc pip3 install --no-cache-dir --no-deps .
 
-FROM registry.access.redhat.com/hi/python:3.12@sha256:aab4f05539f774dd5d2cd487f553f982bb44fcfed1a627ef636cbd3ebd549a57
+FROM registry.access.redhat.com/hi/python:3.12@sha256:91c451682f9c8dbe04d909e357f7696b92894702b72d54e5c2d622a9e4306c3c
 
 COPY --from=builder /opt/venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH" \
